@@ -11,7 +11,7 @@ namespace CoffeShop
         
         Cart[] carts = new Cart[5];
         int indx = 0;
-
+        double price=0;
 
 
         public void AddToOrder(Cart cart)
@@ -26,11 +26,14 @@ namespace CoffeShop
             foreach (Cart cart in carts)
             {
                 if (cart != null)
-                cart.ShowCart();
-
+                {
+                    cart.ShowCart();
+                    price = price + cart.ShowPrice();
+                }
+                
             }
 
-
+            Console.Write("Total price: " + price);
 
 
         }
