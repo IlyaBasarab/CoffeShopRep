@@ -9,7 +9,6 @@ namespace CoffeShop
     class Cart
     {
         AddingsFactory coffeCart;
-
         public void AddToCart(AddingsFactory coffeToCart)
         {
             coffeCart = coffeToCart;
@@ -21,14 +20,20 @@ namespace CoffeShop
             try {
                 
                 coffeCart.GetDescription();
-                Console.WriteLine("Total price:");
-                coffeCart.GetPrice();
-                Console.WriteLine("");
+                Console.WriteLine("Item price:");
+                
+                Console.WriteLine(coffeCart.GetPrice()+'\n');
             }
             catch(NullReferenceException ex)
             { 
                 Console.WriteLine(" No coffe in cart");             
             }
+        }
+        public double ShowPrice()
+        {
+
+            return coffeCart.GetPrice();
+
         }
 
     }
