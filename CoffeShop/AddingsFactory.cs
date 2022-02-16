@@ -32,9 +32,9 @@ namespace CoffeShop
         {
             Console.WriteLine(coffe.GetDescription());
         }
-        public void GetPrice()
+        public double GetPrice()
         {
-            Console.WriteLine( coffe.GetPrice());
+            return coffe.GetPrice();
         }
 
     }
