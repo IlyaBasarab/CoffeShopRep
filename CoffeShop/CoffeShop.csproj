@@ -48,7 +48,8 @@
     <Compile Include="Arabica.cs" />
     <Compile Include="CoffeFactory.cs" />
     <Compile Include="Liberica.cs" />
-    <Compile Include="Neskafe3in1.cs" />
+    <Compile Include="Nescafe3in1.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Robusta.cs" />
     <Compile Include="AddingsFactory.cs" />
     <Compile Include="Cinnamon.cs" />

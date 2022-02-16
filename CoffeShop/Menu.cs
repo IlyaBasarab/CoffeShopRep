@@ -9,20 +9,21 @@ namespace CoffeShop
 
     class Menu
     {
-        CoffeFactory coffeFactory = new CoffeFactory();
-        AddingsFactory addings = null;
+        
+        
         
         public void Start()
         {
+            Order order = new Order();
             bool shopFlag= true;
-            bool addingsFlag = true;
-            Cart cart = new Cart();
+            
+            
 
 
 
             while(shopFlag)
             {
-
+                bool addingsFlag = true;
                 Console.WriteLine("  Shop \n" +
                     "1. Coffe & Addings. \n" +
                     "2. Cart. \n" +
@@ -33,14 +34,16 @@ namespace CoffeShop
                 switch (menuValue)
                 {
                     case 1:
-
+                        Cart cart = new Cart();
+                        CoffeFactory coffeFactory = new CoffeFactory();
+                        
                         Console.WriteLine(" Choose coffe: \n" +
-                    "1. Arabica \n" +
-                    "2. Robusta \n" +
-                    "3. Liberica \n");
+                            "1. Arabica \n" +
+                            "2. Robusta \n" +
+                            "3. Liberica \n"+
+                            "4. Nescafe \n");
                         int CoffeValue = Convert.ToInt32(Console.ReadLine());
 
-                        //cart.AddToCart(coffeFactory.GetCoffe(CoffeValue));
                         AddingsFactory addings = new AddingsFactory(coffeFactory.GetCoffe(CoffeValue));
                         cart.AddToCart(addings);
                         while (addingsFlag)
@@ -55,26 +58,28 @@ namespace CoffeShop
 
                             int addingValue = Convert.ToInt32(Console.ReadLine());
 
-                            Console.WriteLine("in your cart:"+addings.GetAdding(addingValue).GetDescription() +'\n');
+                            Console.WriteLine("In your cart:"+addings.GetAdding(addingValue).GetDescription() +'\n');
                             addings = new AddingsFactory(addings.GetAdding(addingValue));
                             cart.AddToCart(addings);
-
+                            
 
                             if (addingValue == 5)
                             {
+                                
                                 Console.WriteLine("goods are added to cart \n");
+                                order.AddToOrder(cart);
                                 addingsFlag = false;
                             }
 
-                           
 
+                            
                         }
+                        
                         break;
 
                     case 2:
-                       // Console.WriteLine(addings.GetAdding(addingValue).GetDescription());
-
-                        cart.ShowCart();
+                        
+                        order.ShowOrder();
 
                         break;
 

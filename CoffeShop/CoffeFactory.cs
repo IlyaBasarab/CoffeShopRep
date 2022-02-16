@@ -18,6 +18,8 @@ namespace CoffeShop
                     return new Robusta();
                 else if (type == 3)
                     return new Liberica();
+                else if (type == 4)
+                    return new Nescafe3in1();
             }
             catch( ArgumentException ex)
             { }

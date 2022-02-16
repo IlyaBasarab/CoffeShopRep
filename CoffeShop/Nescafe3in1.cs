@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CoffeShop
 {
-    class Neskafe3in1 : Coffe
+    class Nescafe3in1 : Coffe
     {
         public override string GetDescription()
         {
-           return "Neskafe 3in1";
+           return "Nescafe 3in1";
         }
 
         public override double GetPrice()

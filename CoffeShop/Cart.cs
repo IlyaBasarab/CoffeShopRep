@@ -19,9 +19,9 @@ namespace CoffeShop
         public void ShowCart()
         {
             try {
-                Console.WriteLine("In your cart:\n");
+                
                 coffeCart.GetDescription();
-                Console.WriteLine("Total price:\n");
+                Console.WriteLine("Total price:");
                 coffeCart.GetPrice();
                 Console.WriteLine("");
             }
