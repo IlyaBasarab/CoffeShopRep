@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,26 +45,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cart.cs" />
-    <Compile Include="Coffe.cs" />
-    <Compile Include="Arabica.cs" />
-    <Compile Include="CoffeFactory.cs" />
-    <Compile Include="Liberica.cs" />
-    <Compile Include="Nescafe3in1.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Robusta.cs" />
-    <Compile Include="AddingsFactory.cs" />
-    <Compile Include="Cinnamon.cs" />
-    <Compile Include="Creamer.cs" />
-    <Compile Include="Decorator.cs" />
-    <Compile Include="Sugar.cs" />
-    <Compile Include="Syrup.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="Notificators\Notification.cs" />
+    <Compile Include="ShopStuff\Cart.cs" />
+    <Compile Include="CoffeStuff\Coffe.cs" />
+    <Compile Include="CoffeStuff\Arabica.cs" />
+    <Compile Include="CoffeStuff\CoffeFactory.cs" />
+    <Compile Include="CoffeStuff\Liberica.cs" />
+    <Compile Include="CoffeStuff\Nescafe3in1.cs" />
+    <Compile Include="ShopStuff\Order.cs" />
+    <Compile Include="CoffeStuff\Robusta.cs" />
+    <Compile Include="AddersStuff\AddingsFactory.cs" />
+    <Compile Include="AddersStuff\Cinnamon.cs" />
+    <Compile Include="AddersStuff\Creamer.cs" />
+    <Compile Include="AddersStuff\Decorator.cs" />
+    <Compile Include="AddersStuff\Sugar.cs" />
+    <Compile Include="AddersStuff\Syrup.cs" />
+    <Compile Include="ShopStuff\Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Interface.Designer.cs">
+      <DependentUpon>Interface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserAdmin\Administrator.cs" />
+    <Compile Include="UserAdmin\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Interface.resx">
+      <DependentUpon>Interface.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

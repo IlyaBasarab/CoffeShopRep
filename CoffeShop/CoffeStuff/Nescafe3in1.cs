@@ -10,7 +10,7 @@ namespace CoffeShop
     {
         public override string GetDescription()
         {
-           return "Nescafe 3in1";
+           return "Nescafe 3in1 (1,5)";
         }
 
         public override double GetPrice()

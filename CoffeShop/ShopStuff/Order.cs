@@ -8,10 +8,17 @@ namespace CoffeShop
 {
     class Order
     {
+        public int Id;
+
         
-        Cart[] carts = new Cart[5];
+        Cart[] carts = new Cart[50];
         int indx = 0;
         double price=0;
+
+        public Order(int id)
+        {
+            this.Id = id;
+        }
 
 
         public void AddToOrder(Cart cart)
@@ -23,19 +30,22 @@ namespace CoffeShop
 
         public void ShowOrder()
         {
-            foreach (Cart cart in carts)
+            
+
+            for(int i=0; i<indx; i++)
             {
-                if (cart != null)
-                {
-                    cart.ShowCart();
-                    price = price + cart.ShowPrice();
-                }
-                
+                carts[i].ShowCart();
+                price=price+ carts[i].ShowPrice();
+
             }
 
-            Console.Write("Total price: " + price);
+            Console.Write("Total price: " + price+'\n');
+        }
 
 
+        public double GetTotalPrice()
+        {
+            return price;
         }
 
 

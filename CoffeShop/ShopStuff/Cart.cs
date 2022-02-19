@@ -22,7 +22,7 @@ namespace CoffeShop
                 coffeCart.GetDescription();
                 Console.WriteLine("Item price:");
                 
-                Console.WriteLine(coffeCart.GetPrice()+'\n');
+                Console.WriteLine(coffeCart.GetPrice());
             }
             catch(NullReferenceException ex)
             { 

@@ -14,16 +14,39 @@ namespace CoffeShop
         
         public void Start()
         {
-            Order order = new Order();
-            bool shopFlag= true;
-            
+
+
+            Console.WriteLine("  Ented your id: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("  Ented your name: ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("  Ented your age: ");
+            int age = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("  Which coffe type would you like to get notification about: ");
+            string coffeToNotify = Console.ReadLine();
+
+            User user= new User(id,name, age, coffeToNotify);
+
+            if(coffeToNotify!=null)
+            {
+                Notification notification = new Notification(coffeToNotify);
+                user.GetNotification(notification);
+            }
             
 
+
+            Order order = new Order(id);
+            Console.WriteLine("\n");
+            bool shopFlag= true;
 
 
             while(shopFlag)
             {
-                bool addingsFlag = true;
+
+               bool addingsFlag = true;
                 Console.WriteLine("  Shop \n" +
                     "1. Coffe & Addings. \n" +
                     "2. Cart. \n" +
@@ -71,16 +94,19 @@ namespace CoffeShop
                                 addingsFlag = false;
                             }
 
-
-                            
+                            user.GetOrder(order);
+                          
                         }
                         
                         break;
 
                     case 2:
+
+                        Console.WriteLine('\n'+" User " + user.name + " id: " + user.UserId + " made order: ") ;
                         
                         order.ShowOrder();
 
+                        Console.WriteLine("");
                         break;
 
                     case 3:

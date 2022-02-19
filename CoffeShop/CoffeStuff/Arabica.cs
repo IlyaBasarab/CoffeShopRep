@@ -10,7 +10,7 @@ namespace CoffeShop
     {
         public override string GetDescription()
         {
-            return " Arabica ";
+            return " Arabica (35,5) ";
         }
 
         public override double GetPrice()

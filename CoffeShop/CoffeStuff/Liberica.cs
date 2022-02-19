@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace CoffeShop
 {
-    class Robusta : Coffe
+    class Liberica : Coffe
     {
         public override string GetDescription()
         {
-            return "Robusta";
+            return "Liberica (27) ";
         }
 
         public override double GetPrice()
         {
-            return 16;
+            return 27;
         }
     }
 }
